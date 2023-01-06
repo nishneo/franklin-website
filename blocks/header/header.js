@@ -1,4 +1,4 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { readBlockConfig, decorateIcons, makeLinksRelative } from '../../scripts/scripts.js';
 
 /**
  * collapses all open nav sections
@@ -30,14 +30,15 @@ export default async function decorate(block) {
     const nav = document.createElement('nav');
     nav.innerHTML = html;
     decorateIcons(nav);
+    makeLinksRelative(nav);
 
-    const classes = ['brand', 'sections', 'tools'];
+    const classes = ['sections', 'brand', 'tools'];
     classes.forEach((e, j) => {
       const section = nav.children[j];
       if (section) section.classList.add(`nav-${e}`);
     });
 
-    const navSections = [...nav.children][1];
+    const navSections = [...nav.children][0];
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');

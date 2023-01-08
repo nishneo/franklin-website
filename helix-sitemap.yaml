@@ -1,9 +1,12 @@
+version: 1
+
 sitemaps:
   blog:
-    origin: https://main2--franklin-website--nishneo.hlx.live/
+    origin: https://theblog--franklin-website--nishneo.hlx.live
     lastmod: YYYY-MM-DD
     languages:
       en:
         source: /en/query-index.json
-        destination: /sitemap.xml
+        destination: /en/sitemap.xml
         hreflang: en
+        alternate: /en/{path}

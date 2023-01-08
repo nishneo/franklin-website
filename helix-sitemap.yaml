@@ -2,7 +2,7 @@ version: 1
 
 sitemaps:
   blog:
-    origin: https://theblog--franklin-website--nishneo.hlx.live
+    origin: https://theblog--franklin-website--nishneo.hlx.page
     lastmod: YYYY-MM-DD
     languages:
       en:
